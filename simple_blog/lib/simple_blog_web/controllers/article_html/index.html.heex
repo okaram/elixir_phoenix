@@ -1,0 +1,14 @@
+<h1>Articles</h1>
+
+
+<ul>
+<%= for article <- @articles do %>
+    <li><.link navigate={~p"/articles/#{article.id}"}> <%= article.title %> </.link></li>
+<% end %>
+</ul>
+
+<p>
+<a class="buttony" href={~p"/articles/new" }>
+    New Article
+</a>
+</p>
