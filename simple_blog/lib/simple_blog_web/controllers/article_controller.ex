@@ -52,4 +52,13 @@ defmodule SimpleBlogWeb.ArticleController do
     end
   end
 
+  def delete(conn, %{"id" => id}) do
+    article = Blog.get_article!(id)
+    {:ok, _article} = Blog.delete_article(article)
+
+    conn
+    |> put_flash(:info, "Article deleted successfully.")
+    |> redirect(to: ~p"/articles")
+  end
+
 end

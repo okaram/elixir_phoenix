@@ -27,4 +27,14 @@ defmodule SimpleBlog.Blog do
     |> Article.changeset(attrs)
     |> Repo.update()
   end
+
+  def delete_article(%Article{} = article) do
+    Repo.delete(article)
+  end
+
+  def delete_article(something) do
+    IO.inspect(something)
+    inspect(something)
+  end
+
 end

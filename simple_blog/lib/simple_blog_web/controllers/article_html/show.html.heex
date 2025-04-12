@@ -1,3 +1,7 @@
 <h1> <%= @article.title %> </h1>
 <%= md_to_html(@article.body) %>
 
+<div class="button-bar">
+<.link class="buttony" href={~p"/articles/#{@article}/edit"}>Edit</.link>
+<.link class="buttony" href={~p"/articles/#{@article}"} method="delete">Delete</.link>
+</div>
