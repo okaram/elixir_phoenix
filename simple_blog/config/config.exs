@@ -7,6 +7,19 @@
 # General application configuration
 import Config
 
+config :simple_blog, :scopes,
+  user: [
+    default: true,
+    module: SimpleBlog.Accounts.Scope,
+    assign_key: :current_scope,
+    access_path: [:user, :id],
+    schema_key: :user_id,
+    schema_type: :id,
+    schema_table: :users,
+    test_data_fixture: SimpleBlog.AccountsFixtures,
+    test_login_helper: :register_and_log_in_user
+  ]
+
 config :simple_blog,
   ecto_repos: [SimpleBlog.Repo],
   generators: [timestamp_type: :utc_datetime]

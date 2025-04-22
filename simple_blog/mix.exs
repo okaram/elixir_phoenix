@@ -33,6 +33,7 @@ defmodule SimpleBlog.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:bcrypt_elixir, "~> 3.0"},
       {:phoenix, "~> 1.8.0-rc.0", override: true},
       {:phoenix_ecto, "~> 4.5"},
       {:ecto_sql, "~> 3.10"},
@@ -60,7 +61,14 @@ defmodule SimpleBlog.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:earmark, "~> 1.4.47"},
-      {:html_sanitize_ex, "~> 1.4"}
+      {:html_sanitize_ex, "~> 1.4"},
+      {:gen_smtp, ">= 0.0.0"},
+      {:multipart, ">= 0.0.0"},
+      {:plug, ">= 0.0.0"},
+      {:hackney, ">= 0.0.0"},
+      {:ex_aws, ">= 0.0.0"},
+      {:ex_aws_ses, ">= 0.0.0"},
+      {:configparser_ex, "~> 4.0"}
     ]
   end
 
